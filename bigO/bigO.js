@@ -60,7 +60,7 @@ console.log(logAtLeast10(10));
 let timer5End = performance.now();
 console.log(`logAtLeast10 took ${(timer5End - timer5Start / 1000)}`)*/
 
-/** O(n) Example **/
+/** O(n) Example *
 function onlyElementsAtEvenIndex(array) {
     var newArray = Array(Math.ceil(array.length / 2));
     for (var i = 0; i < array.length; i++) {
@@ -70,8 +70,8 @@ function onlyElementsAtEvenIndex(array) {
     }
     return newArray;
 }
-
-/** O(n^2) Example **/
+*/
+/** O(n^2) Example *
 function subtotals(array) {
     var subtotalArray = Array(array.length);
     for (var i = 0; i < array.length; i++) {
@@ -83,32 +83,33 @@ function subtotals(array) {
     }
     return subtotalArray;
 }
-
+*/
 
 /** SPACE COMPLEXITY EXAMPLES **/
 
-/** O(1) **/
+/** O(1) *
 function logUpTo(n) {
     for (var i = 1; i <= n; i++) {
         console.log(i);
     }
-}
+}*/
 
-/** O(1) **/
+/** O(1) *
 function logAtMost10(n) {
     for (var i = 1; i <= Math.min(n, 10); i++) {
         console.log(i);
     }
 }
+*/
 
-/** O(1) **/
+/** O(1) *
 function logAtMost10(n) {
     for (var i = 1; i <= Math.min(n, 10); i++) {
         console.log(i);
     }
-}
+}*/
 
-/** O(n) **/
+/** O(n) *
 function onlyElementsAtEvenIndex(array) {
     var newArray = Array(Math.ceil(array.length / 2));
     for (var i = 0; i < array.length; i++) {
@@ -118,9 +119,9 @@ function onlyElementsAtEvenIndex(array) {
     }
     return newArray;
 }
+*/
 
-
-/** O(n) **/
+/** O(n) *
 function subtotals(array) {
     var subtotalArray = Array(array.length);
     for (var i = 0; i < array.length; i++) {
@@ -132,3 +133,38 @@ function subtotals(array) {
     }
     return subtotalArray;
 }
+*/
+
+/** The Big O of Objects **/
+let instructor = {
+    firstName: "Kelly",
+    isInstructor: true,
+    favoriteNumbers: [1,2,3,4,5]
+}
+
+/* Console
+    Object.keys(instructor)
+    Object.entries(instructor)
+    instructor.hasOwnProperty("firstName")
+*/
+
+/** Arrays and Big O compared to Objects **/
+let names = ["Michael", "Melissa", "Andrea"];
+            //   0          1          2
+            // ["Michael", "Melissa", "Andrea", "Bob"]
+            //   0          1          2          3         <---- O(1)
+            // ["Bob", "Michael", "Melissa", "Andrea"]
+            //   0          1          2          3         <---- O(N)
+            
+
+/**
+    push                                    0(1)
+    pop                                     0(1)
+    shift                                   0(N)
+    unshift                                 0(N)
+    concat                                  0(N)
+    slice                                   0(N)
+    splice                                  0(N)
+    sort                                    0(N*logN)
+    forEach, map, filter, reduce, etc.      O(N)
+**/
