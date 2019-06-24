@@ -90,30 +90,15 @@ console.log(charCount("this is my string"));*/
 
 
 /** Look back and refactor **/
+
 function charCount(str) {
-    // 1. make object to return at end
     var result = {};
-    // 2. for each char in the string    
-    for(var i = 0; i < str.length; i++) {
-        var char = str[i].toLowerCase();
-        console.log(char);
-        // 3. do something for each char in string
+    for(var char of str) {
+        char = char.toLowerCase();
         if (/[a-z0-9]/.test(char)) {
-            console.log('regex true');
-            // if char is alphanumeric
-                // are there any in the object already - if so increment +1
-                if (result[char] > 0) {
-                    result[char]++;
-                }
-                // if not add new char and set value to 1
-                else {
-                    result[char] = 1;
-                }
+                result[char] = ++ result[char] || 1;
         }
-        // if char is something else (!@£$%^> ) don't do anything
     }
-    // 4. return object at end
     return result;
 }
 
-console.log(charCount("this is my string *()£"));
