@@ -38,7 +38,7 @@ charCount(123)                              // should return an error, type chec
 /** Break it down **/
 // Write a function which takes in a string and returns counts of each character in the string
 
-function charCount(str) {
+function charCountBrokenDown(str) {
 
     // 1. make object to return at end
 
@@ -53,3 +53,39 @@ function charCount(str) {
 
     // 4. return object at end
 }
+
+/** Solve or Simplify **/
+// Write a function which takes in a string and returns counts of each character in the string
+
+function charCount(str) {
+    // 1. make object to return at end
+    var result = {}
+    // 2. for each char in the string    
+    for(var i = 0; i < str.length; i++) {
+        var char = str[i];
+        var pattern = /w/;
+        // 3. do something for each char in string
+        //if (pattern.test(char)) {
+            // if char is alphanumeric
+                // are there any in the object already - if so increment +1
+                if (result[char]) {
+                    result[char]++;
+                }
+                // if not add new char and set value to 1
+                else {
+                    result[char] = 1;
+                }
+        //}
+        // if char is something else (!@£$%^> )
+        //else {
+            // don't do anything
+            //return;
+        //}
+    }
+    // 4. return object at end
+    return result;
+}
+
+console.log(charCount("this is my string"));
+
+
