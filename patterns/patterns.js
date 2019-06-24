@@ -35,4 +35,21 @@ charCount("")                               // should return an error, or primpt
 // 4. invalid inputs
 charCount(123)                              // should return an error, type checking?
 
+/** Break it down **/
+// Write a function which takes in a string and returns counts of each character in the string
 
+function charCount(str) {
+
+    // 1. make object to return at end
+
+    // 2. for each char in the string
+    
+    // 3. do something for each char in string
+        // if char is alphanumeric
+            // are there any in the object already - if so increment +1
+            // if not add new char and set value to 1
+        // if char is something else (!@£$%^> )
+            // don't do anything
+
+    // 4. return object at end
+}
