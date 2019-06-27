@@ -41,3 +41,42 @@ function sameLoop(array1, array2) {
 console.log(sameLoop([1,2,3], [4,1,9]));         // true
 console.log(sameLoop([1,2,3], [1,9]));           // false
 console.log(sameLoop([1,2,1], [4,4,1]));         // false    
+
+function frequencyCounter(array1, array2) {
+    console.log("**************************************");
+    // check if 2 arrays are same length
+    if (array1.length !== array2.length) { return false };
+
+    let counter1 = {};
+    let counter2 = {};
+
+    // iterate 1ce over 1st array and store frequency of numbers
+    for (let value of array1) {
+        counter1[value] = (counter1[value] || 0) + 1;
+    }
+    // iterate 1ce over 2nd array and store frequency of numbers
+    for (let value of array2) {
+        counter2[value] = (counter2[value] || 0) + 1;
+    }
+
+    console.log(counter1);
+    console.log(counter2);
+
+    // compare 
+    for (let key in counter1) {
+        // is the number represented by key present in counter 2
+        if(!(key ** 2 in counter2)) {
+            return false;
+        }
+        // is the frequency correct
+        if(counter2[key**2] !== counter1[key]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log(frequencyCounter([1,2,3], [4,1,9]));                // true
+console.log(frequencyCounter([1,2,3], [1,9]));                  // false
+console.log(frequencyCounter([1,2,1], [4,4,1]));                // false 
+console.log(frequencyCounter([1,2,2,3,5], [1,4,4,9,11]));       // true
