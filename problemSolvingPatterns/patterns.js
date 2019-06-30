@@ -1,4 +1,4 @@
-/** Frequency Counter **/
+/** Frequency Counter *
 // function same should return true if every value in the array 
 // has its corresponding calue squared in the second
 // same([1,2,3], [4,1,9])      // true
@@ -79,4 +79,50 @@ function frequencyCounter(array1, array2) {
 console.log(frequencyCounter([1,2,3], [4,1,9]));                // true
 console.log(frequencyCounter([1,2,3], [1,9]));                  // false
 console.log(frequencyCounter([1,2,1], [4,4,1]));                // false 
-console.log(frequencyCounter([1,2,2,3,5], [1,4,4,9,11]));       // true
+console.log(frequencyCounter([1,2,2,3,5], [1,4,4,9,11]));       // true*/
+
+
+/** Anagram Example O(n) **/
+// validAnagram('','')                                  // true
+// validAnagram('aaz', 'zza')                           // false
+// validAnagram('rat', 'car')                           // false
+// validAnagram('awesome', 'awesom')                    // false
+// validAnagram('qwerty', 'qeywrt')                      // true
+// validAnagram('texttwisttime', 'timetwisttext')       // true
+// no spaces, only lowercase alphabets
+
+function validAnagram(string1, string2) {
+    // check if strings have same length - otherwise false
+    if (string1.length !== string2.length) { return false }
+
+    // loop through 1st object and store char as key and number of occurrences
+    let store = {}
+    Array.from(string1, char => {
+        store[char] = (store[char] || 0) + 1 ;
+    });
+
+    console.log(store);
+
+    for (var char = 0; char < string2.length; char++) {
+        const testChar = string2[char];        
+        // if 1 char not present - return false
+        if (!store[testChar]) {
+            return false
+        } else {
+            // if found, decrement
+            store[testChar] -= 1;
+        }      
+    }
+
+    // otherwise strings match and is an anagram - return true
+    return true;
+
+}
+
+console.log("validAnagram Results")
+console.log(validAnagram('',''));
+console.log(validAnagram('aaz', 'zza'));
+console.log(validAnagram('rat', 'car'));
+console.log(validAnagram('awesome', 'awesom'));
+console.log(validAnagram('qwerty', 'qeywrt'));
+console.log(validAnagram('texttwisttime', 'timetwisttext'));
