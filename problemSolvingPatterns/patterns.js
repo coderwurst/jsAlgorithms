@@ -82,7 +82,7 @@ console.log(frequencyCounter([1,2,1], [4,4,1]));                // false
 console.log(frequencyCounter([1,2,2,3,5], [1,4,4,9,11]));       // true*/
 
 
-/** Anagram Example O(n) **/
+/** Anagram Example O(n) *
 // validAnagram('','')                                  // true
 // validAnagram('aaz', 'zza')                           // false
 // validAnagram('rat', 'car')                           // false
@@ -125,4 +125,47 @@ console.log(validAnagram('aaz', 'zza'));
 console.log(validAnagram('rat', 'car'));
 console.log(validAnagram('awesome', 'awesom'));
 console.log(validAnagram('qwerty', 'qeywrt'));
-console.log(validAnagram('texttwisttime', 'timetwisttext'));
+console.log(validAnagram('texttwisttime', 'timetwisttext')); */
+
+/** Multiple Pointers **/
+// input an array with ordered integers
+// return true if 2 values add up to 0
+// returned undefined if no 2 values add up to 0
+function sumZeroLoop(array) {
+    for (let i = 0; i < array.length; i++) {
+        for (let j = i+1; j < array.length; j++) {
+            if (array[i] + array[j] === 0) {
+                return true;
+            }
+        }
+    };
+    return undefined;
+}
+
+console.log(sumZeroLoop([-3, -2, -1, 0, 1, 2, 3]));
+console.log(sumZeroLoop([-2, 0, 1, 3]));
+console.log(sumZeroLoop([1, 2, 3]));
+
+
+function sumZeroPointers(array) {
+    let leftPointr = 0;
+    let rightPointr = array.length -1;
+
+    while (leftPointr < rightPointr){
+        let sum = array[leftPointr] + array[rightPointr];
+        if (sum === 0) {
+            return true;
+        } else if (sum > 0) {
+            rightPointr--;
+        } else {
+            leftPointr++;
+        }
+    }
+    return undefined;
+}
+
+console.log(sumZeroPointers([-3, -2, -1, 0, 1, 2, 3]));
+console.log(sumZeroPointers([-2, 0, 1, 3]));
+console.log(sumZeroPointers([1, 2, 3]));
+
+
