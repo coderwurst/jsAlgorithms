@@ -169,12 +169,12 @@ console.log(sumZeroPointers([-2, 0, 1, 3]));
 console.log(sumZeroPointers([1, 2, 3]));*/
 
 
-/**  Count unique values **/
+/**  Count unique values *
 function uniqueValues(array) {
     if (array.length === 0) {
         return 0
     } 
-    
+
     let i = 0;
     for (let j = 1; j < array.length; j++) {
         if (array[i] !== array[j]) {
@@ -191,6 +191,32 @@ function uniqueValues(array) {
 
 console.log(uniqueValues([1,2,3,4,5,6]));               // 6
 console.log(uniqueValues([1,1,1,2,3,4,4,5,6,7]));       // 7
-console.log(uniqueValues([]));                          // 0
+console.log(uniqueValues([]));                          // 0*/
+
+
+/** maxSubarraySum **/
+function maxSubarraySum(array, number) {
+    let maxSum = 0;
+    let tempSum = 0;
+    if (array.length < number) { return null }
+    // start at beginning, add up first x numbers
+    for (let i = 0; i < number; i++) {
+        maxSum += array[i];
+    }
+    tempSum = maxSum;
+    // compare initial total w rest of array
+    for (i = number; i < array.length; i++) {
+        tempSum = tempSum - array[i - number] + array[i];
+        maxSum = Math.max(tempSum, maxSum);
+    }
+    return maxSum;
+
+}
+
+console.log(maxSubarraySum([1,2,5,2,8,1,5], 2));        // 10
+console.log(maxSubarraySum([1,2,5,2,8,1,5], 4));        // 17
+console.log(maxSubarraySum([4,2,1,6], 1));              // 6
+console.log(maxSubarraySum([4,2,1,6,2], 4));            // 13
+console.log(maxSubarraySum([], 4));                     // null
 
 
