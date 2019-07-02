@@ -127,7 +127,7 @@ console.log(validAnagram('awesome', 'awesom'));
 console.log(validAnagram('qwerty', 'qeywrt'));
 console.log(validAnagram('texttwisttime', 'timetwisttext')); */
 
-/** Multiple Pointers **/
+/** Multiple Pointers *
 // input an array with ordered integers
 // return true if 2 values add up to 0
 // returned undefined if no 2 values add up to 0
@@ -166,6 +166,31 @@ function sumZeroPointers(array) {
 
 console.log(sumZeroPointers([-3, -2, -1, 0, 1, 2, 3]));
 console.log(sumZeroPointers([-2, 0, 1, 3]));
-console.log(sumZeroPointers([1, 2, 3]));
+console.log(sumZeroPointers([1, 2, 3]));*/
+
+
+/**  Count unique values **/
+function uniqueValues(array) {
+    if (array.length === 0) {
+        return 0
+    } 
+    
+    let i = 0;
+    for (let j = 1; j < array.length; j++) {
+        if (array[i] !== array[j]) {
+            // 2 are different, increment i and store value of j
+            i++;
+            // increment j
+            array[i] = array[j];
+        } 
+        // 2 are same, increment j and start again
+    }
+    console.log(array);
+    return i + 1;
+}
+
+console.log(uniqueValues([1,2,3,4,5,6]));               // 6
+console.log(uniqueValues([1,1,1,2,3,4,4,5,6,7]));       // 7
+console.log(uniqueValues([]));                          // 0
 
 
