@@ -194,7 +194,7 @@ console.log(uniqueValues([1,1,1,2,3,4,4,5,6,7]));       // 7
 console.log(uniqueValues([]));                          // 0*/
 
 
-/** maxSubarraySum **/
+/** maxSubarraySum *
 function maxSubarraySum(array, number) {
     let maxSum = 0;
     let tempSum = 0;
@@ -217,6 +217,6 @@ console.log(maxSubarraySum([1,2,5,2,8,1,5], 2));        // 10
 console.log(maxSubarraySum([1,2,5,2,8,1,5], 4));        // 17
 console.log(maxSubarraySum([4,2,1,6], 1));              // 6
 console.log(maxSubarraySum([4,2,1,6,2], 4));            // 13
-console.log(maxSubarraySum([], 4));                     // null
+console.log(maxSubarraySum([], 4));                     // null*/
 
 
