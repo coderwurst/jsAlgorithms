@@ -220,3 +220,41 @@ console.log(maxSubarraySum([4,2,1,6,2], 4));            // 13
 console.log(maxSubarraySum([], 4));                     // null*/
 
 
+/** Try it yourself exercises **/
+/**   Same Frequency Counter  **/
+function sameFrequency(int1, int2){
+    // compare sizes of each array, if not equal return false
+    if (int1.toString().length != int2.toString().length) {
+        return false;
+    }
+    
+    // create 2 objects with digits for each int
+    let obj1 = {};
+    let obj2 = {};
+    // key  == digit, value == frequency
+    const array1 = Array.from(int1.toString());
+    array1.forEach(element => {
+        obj1.hasOwnProperty(element) ? obj1[element] + 1 : obj1[element] = 1;
+    });
+
+    const array2 = Array.from(int2.toString());
+    array2.forEach(element => {
+        obj2.hasOwnProperty(element) ? obj2[element] + 1 : obj2[element] = 1;
+    });
+
+    // loop over first object and compare frequency
+    // of each element to that of second object
+    const results = Object.entries(obj1);
+    for (const [int, count] of results) {
+        if (obj2[parseInt(int)] != count) {
+            return false;
+        }
+    }
+    return true;
+  }
+  
+  
+  console.log(sameFrequency(182, 281));                 // true
+  console.log(sameFrequency(34, 14));                   // false
+  console.log(sameFrequency(3589578, 5879385));         // true
+  console.log(sameFrequency(22,222));                   // false
