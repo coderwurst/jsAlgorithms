@@ -261,12 +261,19 @@ function sameFrequency(int1, int2){
 
 /** Multiple Pointers Duplicates **/
 function areThereDuplicates(...args) {
-    for (let i = 0; i < args.length; i++) {
-        for (let j = i + 1; j < args.length; j++) {
-            if(args[i] == args[j]) {
-                return true;
-            }
+    // sort args array to order
+    const sortedArgs = args.sort();
+
+    // set up pointers
+    let start = 0;
+    let next = 1;
+
+    while (next < sortedArgs.length) {
+        if (sortedArgs[start] === sortedArgs[next]) {
+            return true;
         }
+        start++;
+        next++;
     }
     return false;
 }
