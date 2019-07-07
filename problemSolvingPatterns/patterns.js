@@ -221,7 +221,7 @@ console.log(maxSubarraySum([], 4));                     // null*/
 
 
 /** Try it yourself exercises **/
-/**   Same Frequency Counter  **/
+/**   Same Frequency Counter  *
 function sameFrequency(int1, int2){
     // compare sizes of each array, if not equal return false
     if (int1.toString().length != int2.toString().length) {
@@ -257,4 +257,22 @@ function sameFrequency(int1, int2){
   console.log(sameFrequency(182, 281));                 // true
   console.log(sameFrequency(34, 14));                   // false
   console.log(sameFrequency(3589578, 5879385));         // true
-  console.log(sameFrequency(22,222));                   // false
+  console.log(sameFrequency(22,222));                   // false*/
+
+/** Multiple Pointers Duplicates **/
+function areThereDuplicates(...args) {
+    for (let i = 0; i < args.length; i++) {
+        for (let j = i + 1; j < args.length; j++) {
+            if(args[i] == args[j]) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+
+console.log(areThereDuplicates(1, 2, 3));                   // false
+console.log(areThereDuplicates(1, 2, 2));                   // true
+console.log(areThereDuplicates('a', 'b', 'c', 'a'));        // true
+
