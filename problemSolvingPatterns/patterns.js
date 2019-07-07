@@ -259,7 +259,7 @@ function sameFrequency(int1, int2){
   console.log(sameFrequency(3589578, 5879385));         // true
   console.log(sameFrequency(22,222));                   // false*/
 
-/** Multiple Pointers Duplicates **/
+/** Multiple Pointers - Duplicates *
 function areThereDuplicates(...args) {
     // sort args array to order
     const sortedArgs = args.sort();
@@ -281,5 +281,25 @@ function areThereDuplicates(...args) {
 
 console.log(areThereDuplicates(1, 2, 3));                   // false
 console.log(areThereDuplicates(1, 2, 2));                   // true
-console.log(areThereDuplicates('a', 'b', 'c', 'a'));        // true
+console.log(areThereDuplicates('a', 'b', 'c', 'a'));        // true*/
 
+/** Multiple Pointers - Average Pair **/
+function averagePair([...args], target) {
+    let start = 0;
+    let next = 1;
+    
+    while (next < args.length) {
+        const currentAverage = ((args[start]) + (args[next])) / 2;
+        if (currentAverage === target) {
+            return true;
+        }
+        start++;
+        next++;
+    }
+    return false;
+}
+
+console.log(averagePair([1,2,3], 2.5));                     // true
+console.log(averagePair([1,3,3,5,6,7,9,10,12], 8));         // true
+console.log(averagePair([-1,0,3,4,5,6], 4.1));              // false
+console.log(averagePair([], 4));                            // false
