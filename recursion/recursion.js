@@ -116,8 +116,7 @@ function collectOddValues(arr) {
 console.log(collectOddValues([1, 2, 3, 4, 5]));
 console.log(collectOddValues([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));*/
 
-/** Power **/
-/** Power **/
+/** Power *
 // Write a function called power which accepts a base and an exponent.
 // The function should return the power of the base to the exponent.
 // This function should mimic the functionality of Math.power()
@@ -132,4 +131,20 @@ function power(base, exponent) {
   console.log(`calc 2: 2, 2 = ${power(2, 2)}`); // 4
   console.log(`calc 3: 2, 4 = ${power(2, 4)}`); // 16
   console.log(`calc 4: 2, 6 = ${power(2, 6)}`); // 256
-  console.log(`calc 5: 4, 6 = ${power(4, 6)}`); // 4096
+  console.log(`calc 5: 4, 6 = ${power(4, 6)}`); // 4096*/
+
+  /** Factorial */
+  // Write a function&nbsp;<strong>factorial</strong> which accepts a number and returns the factorial of
+  // that number. A&nbsp;factorial is the product of an integer and all the integers below it; e.g., 
+  // factorial four (&nbsp;<em>4!</em>&nbsp;) is equal to 24, because 4 *&nbsp;3&nbsp;* 2 * 1 equals 24.&nbsp;
+  //<strong> factorial zero (0!) is always 1.</strong></p>
+
+  function factorial(num){
+    if(num === 0) return 1;  
+    return num * factorial(num - 1);
+  }
+
+  console.log(factorial(0));    // 1
+  console.log(factorial(4));    // 24
+  console.log(factorial(7));    // 5040
+  console.log(factorial(10));   // 3628800
