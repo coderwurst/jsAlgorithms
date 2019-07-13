@@ -150,18 +150,12 @@ function power(base, exponent) {
   console.log(factorial(10));   // 3628800*/
 
     
-  /** Product of Array **/
-  function productOfArray(arr){
-    let start = 0;
-    let next = 1;
+/** Product of Array **/
+function productOfArray(arr, start = 0, next = 1){
+    if (next > arr.length) return 1;            // base case
+    return arr[start] * productOfArray(arr, start + 1, next + 1);
+}
+ 
 
-    function multiply(arr, start, next) {
-        if (next > arr.length) return 1;
-        return arr[start] * multiply(arr, start + 1, next + 1);
-    }
-
-    return multiply(arr, start, next);
-  }
-
-  console.log(productOfArray([1, 2, 3]));           // 6
-  console.log(productOfArray([1, 2, 3, 10]));       // 60
+console.log(productOfArray([1, 2, 3]));           // 6
+console.log(productOfArray([1, 2, 3, 10]));       // 60
