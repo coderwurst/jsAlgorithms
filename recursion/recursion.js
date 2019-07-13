@@ -150,7 +150,7 @@ function power(base, exponent) {
   console.log(factorial(10));   // 3628800*/
 
     
-/** Product of Array **/
+/** Product of Array *
 function productOfArray(arr, start = 0, next = 1){
     if (next > arr.length) return 1;            // base case
     return arr[start] * productOfArray(arr, start + 1, next + 1);
@@ -158,4 +158,18 @@ function productOfArray(arr, start = 0, next = 1){
  
 
 console.log(productOfArray([1, 2, 3]));           // 6
-console.log(productOfArray([1, 2, 3, 10]));       // 60
+console.log(productOfArray([1, 2, 3, 10]));       // 60*/
+
+
+/** Recursive Range **/
+// <p>Write a function called <strong>recursiveRange</strong> which accepts a 
+// number and adds up all the numbers from 0 to the number passed to the function&nbsp;</p>
+function recursiveRange(num){
+    if(num === 1) return 1;       // base case
+    return num + recursiveRange(num - 1);
+}
+
+console.log(recursiveRange(4));     // 10
+console.log(recursiveRange(6));     // 21
+console.log(recursiveRange(10));    // 55 
+
