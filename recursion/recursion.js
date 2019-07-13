@@ -115,3 +115,21 @@ function collectOddValues(arr) {
 
 console.log(collectOddValues([1, 2, 3, 4, 5]));
 console.log(collectOddValues([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));*/
+
+/** Power **/
+/** Power **/
+// Write a function called power which accepts a base and an exponent.
+// The function should return the power of the base to the exponent.
+// This function should mimic the functionality of Math.power()
+//   - do not worry about negative bases and exponents.
+function power(base, exponent) {
+    if (exponent === 0) return 1;
+    //console.log(`${base} * ${exponent}`)
+    return base * power(base, exponent - 1);
+  }
+  
+  console.log(`calc 1: 2, 0 = ${power(2, 0)}`); // 1
+  console.log(`calc 2: 2, 2 = ${power(2, 2)}`); // 4
+  console.log(`calc 3: 2, 4 = ${power(2, 4)}`); // 16
+  console.log(`calc 4: 2, 6 = ${power(2, 6)}`); // 256
+  console.log(`calc 5: 4, 6 = ${power(4, 6)}`); // 4096
