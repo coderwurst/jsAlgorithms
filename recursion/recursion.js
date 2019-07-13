@@ -179,14 +179,9 @@ console.log(recursiveRange(10));    // 55 */
 // Fibonacci sequence is the sequence of whole numbers 1, 1, 2, 3, 5, 8, ... which 
 // starts with 1 and 1, and where every number thereafter is equal to the sum of 
 // the previous two numbers.</p>
-function fib(num, arr = [1, 1]){
-    //console.log(arr);
-    if (num === 2) return arr[arr.length - 1];  // base case 2 as 1st 2 numbers added by default
-
-    const nextNumber = arr[arr.length - 1] + arr[arr.length - 2];
-    const newArr = [...arr, nextNumber];
-    
-    return fib(num - 1, newArr);
+function fib(num){
+    if(num <= 2) return 1;
+    return fib(num - 1) + fib(num - 2);
 }
 
 console.log(fib(4));        // 3
