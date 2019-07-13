@@ -133,7 +133,7 @@ function power(base, exponent) {
   console.log(`calc 4: 2, 6 = ${power(2, 6)}`); // 256
   console.log(`calc 5: 4, 6 = ${power(4, 6)}`); // 4096*/
 
-  /** Factorial */
+  /** Factorial 
   // Write a function&nbsp;<strong>factorial</strong> which accepts a number and returns the factorial of
   // that number. A&nbsp;factorial is the product of an integer and all the integers below it; e.g., 
   // factorial four (&nbsp;<em>4!</em>&nbsp;) is equal to 24, because 4 *&nbsp;3&nbsp;* 2 * 1 equals 24.&nbsp;
@@ -147,4 +147,21 @@ function power(base, exponent) {
   console.log(factorial(0));    // 1
   console.log(factorial(4));    // 24
   console.log(factorial(7));    // 5040
-  console.log(factorial(10));   // 3628800
+  console.log(factorial(10));   // 3628800*/
+
+    
+  /** Product of Array **/
+  function productOfArray(arr){
+    let start = 0;
+    let next = 1;
+
+    function multiply(arr, start, next) {
+        if (next > arr.length) return 1;
+        return arr[start] * multiply(arr, start + 1, next + 1);
+    }
+
+    return multiply(arr, start, next);
+  }
+
+  console.log(productOfArray([1, 2, 3]));           // 6
+  console.log(productOfArray([1, 2, 3, 10]));       // 60
